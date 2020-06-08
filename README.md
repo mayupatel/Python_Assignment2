@@ -15,9 +15,9 @@ Using this data structure, add functions that will accomplish the following task
 
 3. Allow the user to trim the nucleotide sequence record based on the quality score. User should be prompted for a score cutoff, after which a new file ("assignment2_trimmed.fastq") should be generated of the FASTQ records with the sequence and quality score lines trimmed based on that selection.  Two things of note: first, the scoring line is scored using ASCII characters. The score, from 0 - 42 (with 42 being the highest) can be found by using the built in function ord() on the character, then subtracting 64.  For instance:
 
-ord("g") -64 = 39
+                             ord("g") -64 = 39
 
-Secondly, these quality scores are subject to a degree of randomness.  Generally speaking, the first part of the read is high quality, and that tends to drop off the longer the read continues.  It is best to use a sliding window approach, similar to how you identify codons, to find the area at which the score drops off.  Once the average score in your window drops below the threshold, then trim at that location.  How big you make your window is up to you.
+    Secondly, these quality scores are subject to a degree of randomness.  Generally speaking, the first part of the read is high quality, and that tends to drop off the longer the read continues.  It is best to use a sliding window approach, similar to how you identify codons, to find the area at which the score drops off.  Once the average score in your window drops below the threshold, then trim at that location.  How big you make your window is up to you.
 
 These three functions should be called from a main method, that like the previous assignment, collects user inputs and directions, then executes whatever the user selects. The three functions should use the various user inputs and return a result.  The functions should not ask for user input themselves, they should only interpret arguments and execute a task.  
 
